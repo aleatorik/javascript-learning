@@ -5,7 +5,7 @@
 // use strict 이점: 자바스크립트 엔진이 더 효율적이고 빠르게 자바스크립트를 분석할 수 있다. 실행하는 데 성능개선.
 "use strict";
 
-// 2. Variable
+// 2. Variable, rw(read/write) --메모리에 읽고 쓰는 것이 가능!
 // let (added in ES6)
 let globalName = "global name";
 {
@@ -17,22 +17,34 @@ let globalName = "global name";
 }
 console.log(globalName);
 
+// var (don't ever use this!)
+// var hoisting (move declaration from bottom to top)
+// has no block scope
+
 //glbal variable은 어플리케이션이 실행되는 순간부터 끝날 때까지 항상 메모리에 탑재되어있기 떄문에
 //촤소한으로 쓰는 것이 좋다. 가능하면 클래스나 함수, if, for문 등으로 필요한 부분에서만 정리해서 쓰는 것이 권장된다.
 
-// 3. Contants(상수)
+// 3. Contant(상수), r(read only)
+// use const whenever possible.
+// only use let if variable needs to change.
+
+const daysInWeek = 7;
+const maxNumber = 5;
+
+//Note!
+//Immutable data types(데이터 자체를 절대 변경 못함): primitive types, frozen objects (i.e. object.freeze())
+//Mutable data types: all objects by default are mutable in JS
+
 // favor immutable(값을 변경할 수 없음) data type always for a few reasons:
 // - security(해커의 코드변경 시도를 차단)
 // - thread safety(다양한 쓰레드들이 동시에 변수에 접근해서 값을 변경할 수 있음->위험, 그러므로 상수로 고정)
 // - reduce human mistakes
-const daysInWeek = 7;
-const maxNumber = 5;
 
 // 4. Variable types(어떤 프로그래밍 언어든 primitive 그리고 object 타입으로 나뉘어짐)
-// primitive, single item: number, string, boolean, null, undefined, symbol
-// object, box container(single item들을 한 단위로 묶어서 관리할 수 있게 해줌)
+// primitive, single item: number, string, boolean, null, undefined, symbol --value가 메모리에 저장됨
+// object, box container(single item들을 한 단위로 묶어서 관리할 수 있게 해줌) --value를 가리키는 reference가 메모리에 저장됨(value 바뀔 수 있음)
 // function, first-class function(함수도 다른 데이터타입처럼 변수에 할당이 가능하고, 그렇기 때문에 함수의 파라미터 인자로도 전달되고, 함수에서 리턴타입으로도 함수를 리턴할 수 있는 것이 가능하다는 뜻)
-
+ㄷ;
 // number - special numeric values: infinity, -infinity, NaN
 const infinity = 1 / 0;
 const negativeInfinity = -1 / 0;
