@@ -102,7 +102,7 @@ class Triangle extends Shape {
   // 필요한 함수만 재정의 --오버라이딩 + 다형성위력
   draw() {
     super.draw(); //부모의 draw() 함수를 호출
-    console.log("⛱");
+    console.log("🔺");
   }
   getArea() {
     return (this.width * this.height) / 2;
