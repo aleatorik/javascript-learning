@@ -42,7 +42,7 @@ fruits.forEach(function (fruit, index, array) {
 fruits.forEach((fruit, index, array) => console.log(fruit, index, array));
 // forEach는 배열 안에 들어있는 value들마다 내가 전달한 함수를 출력한다!
 
-/*
+console.clear();
 
 // 4. Addition, deletion, copy
 // push: add an item to the end (뒤에서부터)
@@ -79,23 +79,22 @@ console.log(newFruits);
 // 5. Searching -- 검색 API
 // find the index -- 배열 안에 어떤 값이 몇 번째 index에 있는지 알고 싶을 때 사용
 
-//console.clear();
+console.clear();
 
 console.log(fruits);
 console.log(fruits.indexOf("🍎"));
 console.log(fruits.indexOf("🍐"));
 
 // includes -- 배열에 특정값이 있는지 없는지 True/False로 리턴
+
 console.log(fruits.includes("🥕"));
 console.log(fruits.includes("🍟"));
 
-// lastIndexOf -- 제일 마지막에 들어있는 값의 index를 리턴
+console.clear();
 
-//console.clear();
+// lastIndexOf -- 제일 마지막에 들어있는 값의 index를 리턴
 
 fruits.push("🍎");
 console.log(fruits);
 console.log(fruits.indexOf("🍎")); //'indexOf'는 제일 첫번째로 해당하는 값을 만나면 그 값이 들어있는 index를 리턴
 console.log(fruits.lastIndexOf("🍎"));
-
-*/
