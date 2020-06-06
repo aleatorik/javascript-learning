@@ -16,8 +16,10 @@ console.log(fruits[2]);
 console.log(fruits[fruits.length - 1]); //배열의 마지막 아이템 찾을 때는 -1 (index가 0부터시작하므로)
 
 console.clear();
+
 // 3. Looping over an array
 // print all fruits
+
 // a. for
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
@@ -28,15 +30,19 @@ for (let fruit of fruits) {
   console.log(fruit);
 }
 
-// c. forEach -- forEach는 Callback 함수를 받아온다(배열 안에 들어있는 value들마다 내가 전달한 함수들을 출력한다)
-/*fruits.forEach(function (fruit, index, array) { // forEach에서 보통 
-//array는 argument로 받지않음!
-//  console.log(fruit, index, array);
-}); --> anonymous 함수는 array function으로 변환가능! (바로 아래 확인) 
-*/
+console.clear();
 
-fruits.forEach((fruit) => console.log(fruit));
-// forEach는 배열 안에 들어있는 value들마다 내가 전달한 함수를 출력한다!!
+// c. forEach -- forEach는 Callback 함수를 받아온다(배열 안에 들어있는 value들마다 내가 전달한 함수를 출력한다)
+
+fruits.forEach(function (fruit, index, array) {
+  console.log(fruit, index, array);
+});
+//--> anonymous 함수는 arrow function으로 변환가능! (바로 아래 확인)
+
+fruits.forEach((fruit, index, array) => console.log(fruit, index, array));
+// forEach는 배열 안에 들어있는 value들마다 내가 전달한 함수를 출력한다!
+
+/*
 
 // 4. Addition, deletion, copy
 // push: add an item to the end (뒤에서부터)
@@ -72,7 +78,9 @@ console.log(newFruits);
 
 // 5. Searching -- 검색 API
 // find the index -- 배열 안에 어떤 값이 몇 번째 index에 있는지 알고 싶을 때 사용
-console.clear();
+
+//console.clear();
+
 console.log(fruits);
 console.log(fruits.indexOf("🍎"));
 console.log(fruits.indexOf("🍐"));
@@ -82,8 +90,12 @@ console.log(fruits.includes("🥕"));
 console.log(fruits.includes("🍟"));
 
 // lastIndexOf -- 제일 마지막에 들어있는 값의 index를 리턴
-console.clear();
+
+//console.clear();
+
 fruits.push("🍎");
 console.log(fruits);
 console.log(fruits.indexOf("🍎")); //'indexOf'는 제일 첫번째로 해당하는 값을 만나면 그 값이 들어있는 index를 리턴
 console.log(fruits.lastIndexOf("🍎"));
+
+*/
