@@ -17,31 +17,38 @@ class Person {
 
   // methods
   speak() {
-    console.log(`${this.name}: hello!`);
+    console.log(`my name is ${this.name}: hello!`);
   }
 }
 
-const alex = new Person("alex", 23);
+const alex = new Person("alex", 24);
 console.log(alex.name);
 console.log(alex.age);
 alex.speak();
 
-//  2. Getter and Setters
+//  2. Getter and Setters -- 사용이유: 특정 값을 설정하기 위해. (예를 들어, 커피머신의 커피생산단위에 음수는 없음, 즉 사용자가 '-1'이라는 잘못된 값을 입력했을 때에도 올바른 값으로 바뀌어서 입력되게끔 바꾸는 역할. -> Line 52)
 class User {
   constructor(firstName, lastName, age) {
     this.firstName = firstName;
     this.lastName = lastName;
-    this.age = age;
+    this.age = age; //getter, setter가 정의되어 있는 경우, 'this.age'는 메모리에 올라가 있는 데이터를 읽어오는 대신 get함수를 호출!
+    //' = age; '는 age가 메모리에 값을 바로 할당하는 것이 아니라 line 43의 setter함수를 호출한다
   }
 
   get age() {
+    // 특정 값을 리턴
     return this._age;
   }
-
+  /*
   set age(value) {
-    // if (value < 0) {
-    //   throw Error("age can not be negative");
-    // }
+    this.age = value; //getter 와 setter안에 쓰이는 변수 이름을 변경하므로써 class.js:39 Uncaught RangeError: Maximum call stack size exceeded 에러를 방지한다. 에러 발생이유: Line 43의 value가 'set age(value) {}' <- set 함수를 무한호출한다. 그러므로 이름 변경필요!
+  }
+*/
+  set age(value) {
+    // 특정 값을 설정 -- 설정할 값을 받아와야함! 여기서는 'value'
+    //    if (value < 0) {
+    //     throw Error("age can not be negative");
+    //    }
     this._age = value < 0 ? 0 : value;
   }
 }
@@ -61,8 +68,8 @@ const experiment = new Experiment();
 console.log(experiment.publicField);
 console.log(experiment.privateField);
 
-// 4. Static properties and methods -- 최근 업뎃, 쓰기엔 무리가 있음, 이런게 있다 정도!
-// Object와 상관없이 공통적으로 클래스에서 사용할 수 있는 거라면 static과 static method를 사용 -- 메모리의 사용을 줄여줌!
+// 4. Static properties and methods -- 메모리 사용을 줄여줌! (최근 업뎃, 쓰기엔 무리가 있음, 이런게 있다 정도!)
+// Object와 상관없이 공통적으로 클래스에서 사용할 수 있는 거라면 static과 static method를 사용
 class Article {
   static publischer = "Dickmann";
   constructor(articleNumber) {
@@ -79,7 +86,7 @@ const article2 = new Article(2);
 console.log(Article.publischer);
 Article.printPubliser();
 
-// 5. Ingeritance
+// 5. Inheritance
 // a way for one class to extend another class.
 class Shape {
   constructor(width, height, color) {
