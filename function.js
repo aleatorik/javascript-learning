@@ -171,7 +171,3 @@ const simpleMultiply = (a, b) => {
   //함수의 선언을 () 괄호로 묶은다음에 함수를 호출하듯이 (); <- 이렇게 작성하면 함수가 바로 호출됨.
   console.log("IIFE");
 })();
-
-// Quiz♥️
-// function calculate (command, a, b)
-// command: add, substract, divide, multiply, remainder
