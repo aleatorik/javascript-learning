@@ -18,3 +18,15 @@ setTimeout(function () {
 // 즉, 이 경우에는 1초가 지난 다음에 위에 함수('2'를 출력)를 실행. -- callback: 나중에(1초가 지난다음) 다시 불러줘(실행)
 //callback 함수: 우리가 전달해준 함수를 나중에 니가 불러줘
 // setTimeout(() => console.log("2)"), 1000);
+
+// Synchronous callback
+function printImmediately(print) {
+  print();
+}
+printImmediately(() => console.log("hello"));
+
+// Asynchronous callback
+function printWithDelay(print, timeout) {
+  setTimeout(print, timeout);
+}
+printWithDelay(() => console.log("async callback"), 2000);
