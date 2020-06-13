@@ -30,3 +30,19 @@ function printWithDelay(print, timeout) {
   setTimeout(print, timeout);
 }
 printWithDelay(() => console.log("async callback"), 2000);
+
+// Callback Hell example
+class UserStorage {
+  loginUser(id, password, onSuccess, onError) {
+    setTimeout(() => {
+      if (
+        (id === "daniel" && password === "dev") ||
+        (id === "js" && password === "javascript")
+      ) {
+        onSuccess(id);
+      } else {
+        onError(new Error("not found"));
+      }
+    }, 2000);
+  }
+}
