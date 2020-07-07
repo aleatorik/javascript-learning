@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Map
+      let m = new Map();
+
+      m.set('one', '1');
+      m.set(1, 'one');
+      m.set(true, 1);
+      m.set(false, 0);
+
+      console.log(m.get('one'));
+      console.log(m.get('true'));
+      console.log(m.has('one'));
+      console.log(m.delete('one'));
+      console.log(m.has('one'));
+      console.log(m.size);
+
+      for (var variable of m) {
+        console.log(`iterate m: ${variable}`);
+      }
+
+      for (var variable of m) {
+        console.log(`iterate m: ${variable[0]}`);
+      }
+
+      for (var variable of m) {
+        console.log(`iterate m: ${variable[1]}`);
+      }
+
+      console.log(m.keys());
+      console.log(m.values());
+      console.log(m.entries());
+
+      //   Set(집합) -- 중복을 허락하지 않는다
+      let s = new Set('abcdeeeeeee');
+      console.log(s); // set(5) {"a","b","c","d","e"}
+
+      //어떠한 것에서 중복을 제거한 개수를 알고 싶을 때
+      console.log(s.size);
+      s.add('f'); //
+      console.log(s);
+
+      for (const variable of s) {
+        console.log(variable);
+      }
+
+      let ss = new Set('abcdeeeeeee'.split(''));
+      console.log(ss); // return array -- {"a", "b", "c", "d", "e"}
+
+      ss.delete('b');
+      console.log(ss.has('a')); // return boolean
+      console.log(ss);
+    </script>
+  </body>
+</html>
