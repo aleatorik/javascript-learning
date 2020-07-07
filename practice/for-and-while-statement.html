@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      array = [10, 20, 30, 40, 50];
+      for (var i = 0; i < 5; i++) {
+        document.write(array[i]);
+        document.write('<br>');
+      }
+      j = 0;
+      while (j < 10) {
+        document.write(j);
+        document.write('<br>');
+        j++;
+      }
+      
+      // Multiplication table with for & while loop
+      */
+      let sum = 0;
+      for (let i = 2; i < 10; i++) {
+        document.write('<br>');
+        document.write(`${i}dan`);
+        for (let j = 1; j < 10; j++) {
+          sum = i * j;
+          document.write('<br>');
+          document.write(`${i} * ${j} = ${sum}`);
+        }
+      }
+      /*
+      let i = 2;
+      let sum = 0;
+      while (i < 10) {
+        document.write(`<${i}dan>`);
+        document.write('<br>');
+        let j = 1;
+        while (j < 10) {
+          sum = i * j;
+          document.write(`${i} * ${j} = ${sum}`);
+          document.write('<br>');
+          j++;
+        }
+        i++;
+      }
+      */
+    </script>
+  </body>
+</html>
