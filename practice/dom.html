@@ -4,16 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      p {
+        background-color: pink; /* see the difference of syntax from line 23 */
+      }
+    </style>
   </head>
   <body>
     <!-- <div class="one">hello world</div> -->
     <!-- <div class="one two" id="three">hello world two</div> -->
     <!-- <div class="one two four">hello world three</div> -->
     <h1 id="one">hello world</h1>
+    <p>hello javascript</p>
     <button onclick="f()">click!!</button>
     <script>
       function f() {
         document.getElementById('one').innerHTML = 'nice to see you';
+        document.getElementById('one').style.backgroundColor = 'peru';
       }
       //1. 단일 element를 반환하는 함수
       //document.getElementById('id');
