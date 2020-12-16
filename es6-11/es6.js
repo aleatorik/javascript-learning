@@ -6,12 +6,12 @@
 
 {
   const ellie1 = {
-    name: 'Ellie',
-    age: '18',
+    name: "Ellie",
+    age: "18",
   };
 
-  const name = 'Ellie';
-  const age = '18';
+  const name = "Ellie";
+  const age = "18";
 
   // 💩
   const ellie2 = {
@@ -37,7 +37,7 @@
 {
   // object
   const student = {
-    name: 'Anna',
+    name: "Anna",
     level: 1,
   };
 
@@ -58,7 +58,7 @@
   }
 
   // array
-  const animals = ['🐶', '😽'];
+  const animals = ["🐶", "😽"];
 
   // 💩
   {
@@ -81,16 +81,18 @@
  *
  */
 {
-  const obj1 = { key: 'key1' };
-  const obj2 = { key: 'key2' };
+  const obj1 = { key: "key1" };
+  const obj2 = { key: "key2" };
   const array = [obj1, obj2];
+
+  // array라는 기존의 object를 변경하게되면 그 array의 메모리 주소값을 참조한 변수들(spread 연산자를 이용한 복사본)도 똑같이 변경되므로 이 점을 주의할 것
 
   // array copy
   const arrayCopy = [...array];
   console.log(array, arrayCopy);
 
-  const arrayCopy2 = [...array, { key: 'key3' }];
-  obj1.key = 'newKey';
+  const arrayCopy2 = [...array, { key: "key3" }];
+  obj1.key = "newKey";
   console.log(array, arrayCopy, arrayCopy2);
 
   // object copy
@@ -98,16 +100,17 @@
   console.log(obj3);
 
   // array concatenation
-  const fruits1 = ['🍑', '🍓'];
-  const fruits2 = ['🍌', '🥝'];
+  const fruits1 = ["🍑", "🍓"];
+  const fruits2 = ["🍌", "🥝"];
   const fruits = [...fruits1, ...fruits2];
   console.log(fruits);
 
   // object merge
-  const dog1 = { dog: '🐕' };
-  const dog2 = { dog: '🐶' };
+  const dog1 = { dog: "🐕" };
+  const dog2 = { dog: "🐶" };
   const dog = { ...dog1, ...dog2 };
-  console.log(dog);
+  console.log(dog); // {dog: "🐶"}
+  // key값이 동일한 객체들을 병합했을 때는 마지막에 오는 객체가 이전 객체를 덮어씌운다
   console.clear();
 }
 
@@ -120,22 +123,22 @@
   {
     function printMessage(message) {
       if (message == null) {
-        message = 'default message';
+        message = "default message";
       }
       console.log(message);
     }
 
-    printMessage('hello');
+    printMessage("hello");
     printMessage();
   }
 
   // ✨
   {
-    function printMessage(message = 'default message') {
+    function printMessage(message = "default message") {
       console.log(message);
     }
 
-    printMessage('hello');
+    printMessage("hello");
     printMessage();
   }
   console.clear();
@@ -151,18 +154,18 @@
   {
     let component;
     if (isCat) {
-      component = '😸';
+      component = "😸";
     } else {
-      component = '🐶';
+      component = "🐶";
     }
     console.log(component);
   }
 
   // ✨
   {
-    const component = isCat ? '😸' : '🐶';
+    const component = isCat ? "😸" : "🐶";
     console.log(component);
-    console.log(isCat ? '😸' : '🐶');
+    console.log(isCat ? "😸" : "🐶");
   }
   console.clear();
 }
@@ -172,16 +175,15 @@
  * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals
  */
 {
-  const weather = '🌤';
-  const temparature = '16°C';
+  const weather = "🌤";
+  const temparature = "16°C";
 
   // 💩
   console.log(
-    'Today weather is ' + weather + ' and temparature is ' + temparature + '.'
+    "Today weather is " + weather + " and temparature is " + temparature + "."
   );
 
   // ✨
-  
-  console.log(`Today weather is ${weather} and temparature is ${temparature}.`);
 
+  console.log(`Today weather is ${weather} and temparature is ${temparature}.`);
 }
