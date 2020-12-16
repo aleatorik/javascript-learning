@@ -1,3 +1,3 @@
 # Javascript-learning
 
-Studying JavaScript ES6
+Studying Modern JavaScript ES6 - ES11
