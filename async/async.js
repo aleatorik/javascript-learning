@@ -55,8 +55,9 @@ pickFruits().then(console.log);
 
 pickFruits().then(console.log);
 */
-// 위의 예시의 문제점의 경우 banana가 apple받아오는 것을 기다릴 필요가 없으므로(2초 소요) 병렬적으로 만드는게 효율적
-/*async function pickFruits() {
+// 위의 예시의 문제점은 처리시간이 길어짐(동기적) banana가 apple받아오는 것을 기다릴 필요가 없으므로(2초 소요) 병렬적으로 만드는게 효율적
+/*
+async function pickFruits() {
   const applePromise = getApple(); //promise가 만들어지자마자 getApple() 함수가 바로 실행됨
   const bananaPromise = getBanana(); // promise가 만들어지자마자 getBanana 함수가 바로 실행됨, 즉 두 개가 병렬적으로 동시에 실행
   const apple = await applePromise;
