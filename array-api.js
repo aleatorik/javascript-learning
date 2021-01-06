@@ -25,6 +25,7 @@
   console.log(array);
 }
 
+console.clear();
 // Q4. make new array without the first two elements
 {
   const array = [1, 2, 3, 4, 5];
