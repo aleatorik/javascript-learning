@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // JavaScript is synchronous(동기적)
 // Execute the code block by order after hoisting
@@ -6,14 +6,14 @@
 // hoisting: var, function declaration 들이 자동적으로 제일 위로 올라가는 것
 
 // synchronous
-console.log("1");
-console.log("2");
-console.log("3");
+console.log('1');
+console.log('2');
+console.log('3');
 
 // asynchronous: 비동기 --언제코드가 실행될지 예측할 수 없는 것
-console.log("1");
+console.log('1');
 setTimeout(function () {
-  console.log("2");
+  console.log('2');
 }, 1000); //우리가 지정한 시간이 지나면 우리가 전달한 함수(콜백함수)를 전달하는 것
 // 즉, 이 경우에는 1초가 지난 다음에 위에 함수('2'를 출력)를 실행. -- callback: 나중에(1초가 지난다음) 다시 불러줘(실행)
 //callback 함수: 우리가 전달해준 함수를 나중에 니가 불러줘
@@ -23,13 +23,13 @@ setTimeout(function () {
 function printImmediately(print) {
   print();
 }
-printImmediately(() => console.log("hello"));
+printImmediately(() => console.log('hello'));
 
 // Asynchronous callback
 function printWithDelay(print, timeout) {
   setTimeout(print, timeout);
 }
-printWithDelay(() => console.log("async callback"), 2000);
+printWithDelay(() => console.log('async callback'), 2000);
 
 // Callback Hell example
 
@@ -37,30 +37,31 @@ class UserStorage {
   loginUser(id, password, onSuccess, onError) {
     setTimeout(() => {
       if (
-        (id === "daniel" && password === "dev") ||
-        (id === "js" && password === "javascript")
+        (id === 'daniel' && password === 'dev') ||
+        (id === 'js' && password === 'javascript')
       ) {
         onSuccess(id);
       } else {
-        onError(new Error("not found"));
+        onError(new Error('not found'));
       }
     }, 2000);
   }
 
   getRoles(user, onSuccess, onError) {
     setTimeout(() => {
-      if (user === "daniel") {
-        onSuccess({ name: "daniel", role: "admin" });
+      if (user === 'daniel') {
+        onSuccess({ name: 'daniel', role: 'admin' });
       } else {
-        onError(new Error("no access"));
+        onError(new Error('no access'));
       }
     }, 1000);
   }
 }
 
 const userStorage = new UserStorage();
-const id = prompt("enter your id");
-const password = prompt("enter your password");
+const id = prompt('enter your id');
+const password = prompt('enter your password');
+
 userStorage.loginUser(
   id,
   password,
